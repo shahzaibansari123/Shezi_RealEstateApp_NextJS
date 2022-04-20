@@ -6,7 +6,9 @@ import {MdCancel} from 'react-icons/md'
 
 
 const SearchFilters=()=>{
-    
+    return(
+        <div>Search filters</div>
+    )
 
 }
 
