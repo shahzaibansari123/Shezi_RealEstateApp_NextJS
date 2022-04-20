@@ -20,11 +20,12 @@ const Search = () => {
         fontSize="lg"
         justifyContent="center"
         alignItems="center"
-        onClick={()=> setSearchFilters()}
+        onClick={()=> setSearchFilters((prevFilters)=> !prevFilters)}
       >
         <Text>Search property by Filters</Text>
         <Icon paddingLeft="2" w="7" as={BsFilter}/>
       </Flex>
+      {searchFilters && <SearchFilters />}
     </Box>
   );
 };
