@@ -31,7 +31,7 @@ const SearchFilters = () => {
 
     router.push({ pathname: path, query });
   };
-
+  //location k hisab se bhi search filter laga skty api me autocomplete request se agr chahein
   return (
     <Flex bg="gray.100" p="4" justifyContent="center" flexWrap="wrap">
       {filters.map((filter) => (
