@@ -21,7 +21,7 @@ const PropertyDetails = ({
     type,
     purpose,
     furnishingStatus,
-    ameneties,
+    amenities,
     photos,
   },
 }) => (
@@ -52,10 +52,76 @@ const PropertyDetails = ({
         <BsGridFill />
       </Flex>
       <Box marginTop="2">
-        <Text fontSize="lg" marginBottom="2" fontWeight="bold">{title}</Text>
-        <Text lineHeight="2" color="gray.600">{description}</Text>
+        <Text fontSize="lg" marginBottom="2" fontWeight="bold">
+          {title}
+        </Text>
+        <Text lineHeight="2" color="gray.600">
+          {description}
+        </Text>
       </Box>
-      <Flex></Flex>
+      <Flex
+        flexWrap="wrap"
+        textTransform="uppercase"
+        justifyContent="space-between"
+      >
+        <Flex
+          justifyContent="space-between"
+          w="400px"
+          borderBottom="1px"
+          borderColor="gray.100"
+          p="3"
+        >
+          <Text>Type</Text>
+          <Text fontWeight="bold">{type}</Text>
+        </Flex>
+        <Flex
+          justifyContent="space-between"
+          w="400px"
+          borderBottom="1px"
+          borderColor="gray.100"
+          p="3"
+        >
+          <Text>Purpose</Text>
+          <Text fontWeight="bold">{purpose}</Text>
+        </Flex>
+        {furnishingStatus && (
+          <Flex
+            justifyContent="space-between"
+            w="400px"
+            borderBottom="1px"
+            borderColor="gray.100"
+            p="3"
+          >
+            <Text>Furnishing Status</Text>
+            <Text fontWeight="bold">{furnishingStatus}</Text>
+          </Flex>
+        )}
+      </Flex>
+      <Box>
+        {amenities.length && (
+          <Text fontSize="2xl" fontWeight="black" marginTop="5">
+            Ameneties
+          </Text>
+        )}
+        <Flex flexWrap="wrap">
+          {amenities.map((item) =>
+            item.amenities.map((amenity) => (
+              <Text
+                key={amenity.text}
+                fontSize="l"
+                color="blue.400"
+                fontWeight="bold"
+                p="2"
+                bg="gray.200"
+                m="1"
+                borderRadius="5"
+              >
+                {amenity.text}
+              </Text>
+            ))
+          )}
+        </Flex>
+      </Box>
     </Box>
   </Box>
 );
